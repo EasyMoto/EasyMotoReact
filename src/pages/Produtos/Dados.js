@@ -1,4 +1,25 @@
-export const labels = ['Nome', 'Preco', 'Descricao', 'Tamanho', 'Genero', 'Quantidade','Cor', 'Colecao', 'Categoria', 'Marca', 'Utilizador']
+export const icons = [
+  {
+  id: 1,
+  src: require('./icon-boots.png')
+}, 
+{
+  id: 2,
+  src: require('./icon-gloves.png')
+}, 
+{
+  id: 3,
+  src: require('./icon-helmets.png')
+}, 
+{
+  id: 4,
+  src: require('./icon-jackets.png')
+}, 
+{
+  id: 5,
+  src: require('./icon-pants.png')
+}, 
+]
 export const produtosList = [
   {
     id: 1,
@@ -47,7 +68,7 @@ export const produtosList = [
   },
   
   {
-    id: 3,
+    id: 4,
     nome: 'Botas 2',
     preco: '89,80 €',
     descricao: 'Descrição 3',
@@ -62,18 +83,20 @@ export const produtosList = [
     images: require('./3-1.jpg')
   },
   {
-    id: 2,
+    id: 5,
     nome: 'Luvas 2',
     preco: '29,99 €',
     descricao: 'Descrição 2',
-    tamanho: 'L',
+    tamanho: 'S',
     genero: 'Masculino',
     quantidade: 3,
     cor: 'Azul',
     colecao: 'Inverno',
     categoria: 'luvas',
-    marca: 'Alpine Stars',
+    marca: 'Dainese',
     utilizador: 'EasyMoto',
     images: require('./2-1.jpg')
   },
 ]
+
+export const labels = Object.keys(produtosList[0]).slice(1)
