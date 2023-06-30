@@ -69,34 +69,41 @@ const Produtos2 = () => {
   }
 
   return (
-    <div>
-      <Layout />
+    <>
+      <div className="produtos-background">
+        <Layout />
+        <h1>EasyMoto Home</h1>
+        <h4>Usufrui das nossas categorias</h4>
+        <Container  fluid className='icon-container'>
+        <Row className="justify-content-md-center">
+          {icons.map((icon) => (
+            <Col key={icon.id} xs='2' md='2' lg="1">
+              <Image className='icons' src={icon.src} onClick={() => showCategory(icon.id)}/>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      </div>
         <div >
-          <Container  fluid className='icon-container'>
-            <Row className="justify-content-md-center">
-              {icons.map((icon) => (
-                <Col key={icon.id} xs='2' md='2' lg="1">
-                  <Image className='icons' src={icon.src} onClick={() => showCategory(icon.id)}/>
-                </Col>
-              ))}
-            </Row>
-          </Container>
-          <div>
-            <FiltrosProduto categoria={convertToUpper(atualCategory)}
-            labels={labels} 
-            marcas={marcas} 
-            colecoes={colecoes} 
-            cores={cores}
-            generos={generos}
-            tamanhos={tamanhos}
-            handleFiltros={handleFiltros}/>
-          </div>
-          <div className="home-products">
-            {filteredProdutos.map((produto) => (<Produtocard key={produto.id} produto={produto}/>))}
-          </div>
+          <FiltrosProduto categoria={convertToUpper(atualCategory)}
+          labels={labels} 
+          marcas={marcas} 
+          colecoes={colecoes} 
+          cores={cores}
+          generos={generos}
+          tamanhos={tamanhos}
+          handleFiltros={handleFiltros}/>
         </div>
-        
-    </div>
+        <div className="home-products">
+          {atualCategory !== 'top'? 
+          (filteredProdutos.map((produto) => (<Produtocard key={produto.id} produto={produto}/>))) : 
+          (produtosList
+            .sort((a, b) => b.quantidade - a.quantidade).slice(0,4).map((produto) => (
+            <Produtocard  key={produto.id} produto={produto}/>
+          )))}
+          
+        </div>
+    </>
   )
 }
 

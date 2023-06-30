@@ -17,7 +17,15 @@ tr, td {
 }
 
 .home-background {
-  background-image: url("./pages/Produtos/background.jpg");
+  background-image: url("./pages/Produtos/background-home.jpg");
+  background-size: 100% auto;
+  background-position: 50% 20%;
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+
+.produtos-background {
+  background-image: url("./pages/Produtos/background-prod.jpg");
   background-size: 100% auto;
   background-position: 50% 20%;
   background-repeat: no-repeat;
@@ -31,7 +39,24 @@ tr, td {
   padding: 30px;
 }
 
+.produtos-background h1 {
+  font-family: "Your Font", sans-serif;
+  font-size: 48px;
+  color: #fff;
+  padding: 30px;
+}
+
 .home-background h4 {
+  font-family: "Your Font", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(63, 63, 63, 0.418);
+  margin-bottom: 10px;
+  padding: 10px;
+  padding-left: 180px;
+}
+
+.produtos-background h4 {
   font-family: "Your Font", sans-serif;
   font-size: 24px;
   color: #fff;
