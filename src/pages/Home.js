@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Layout from "../components/Layout"
-import { produtosList } from "./Produtos/Dados"
+// import { produtosList } from "./Produtos/Dados"
 import Produtocard from "../components/Produtocard"
 
 class Home extends Component{
@@ -23,13 +23,13 @@ class Home extends Component{
   }
 
   render(){
-    let produtosList2 = [];
+    let produtosList = [];
 
     this.state.listaEasyMoto.forEach(produto =>
-      produtosList2.push({produto})
+      produtosList.push({produto})
     );
 
-    console.log(produtosList2)
+    console.log(produtosList)
 
     return (
       <>
@@ -41,8 +41,8 @@ class Home extends Component{
         
         <div className="home-products">
           {produtosList
-            .sort((a, b) => b.quantidade - a.quantidade).slice(0,4).map((produto) => (
-            <Produtocard  key={produto.id} produto={produto}/>
+            .sort((a, b) => b.quantidade - a.quantidade).slice(0,4).map((item, index) => (
+            <Produtocard  key={index} produto={item.produto}/>
           ))}
         </div>
       </>
