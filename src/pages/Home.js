@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Layout from "../components/Layout"
 import { produtosList } from "./Produtos/Dados"
 import Produtocard from "../components/Produtocard"
-import { Button } from 'react-bootstrap';
 
 class Home extends Component{
   state = { listaEasyMoto: [], dadosEasyMoto: null }

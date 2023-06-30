@@ -58,6 +58,7 @@ const Produtos = () => {
   };
 
   const handleEditarProduto = (editedProduct) => {
+    console.log('Editar Produto')
     setProdutos((prevProdutos) => {
       const updatedProdutos = prevProdutos.map((produto) => {
         if (produto.id === editedProduct.id) {
@@ -90,15 +91,18 @@ const Produtos = () => {
             />
             <TableList 
               labels={labels} 
-              produtos={produtos} 
+              produtos={produtos}
               toggleVisibilityEdit={toggleVisibilityEdit}
               toggleVisibilityDelete={toggleVisibilityDelete}
               toggleVisibilityDetails={toggleVisibilityDetails}
             />
           </>
         )}
+
+        {/* enviar "páginas" corretas para cada botão e a informação se devem estar visiveis ou não */}
         {visibleEdit && <EditarProduto 
           produto={editableProduct} 
+          handleEditarProduto={handleEditarProduto}
           toggleVisibilityEdit={toggleVisibilityEdit}
           setVisibleEdit={setVisibleEdit}/>}
         {visibleDelete && <ApagarProduto 
