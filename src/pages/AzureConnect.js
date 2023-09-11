@@ -1,7 +1,7 @@
 // get the data for the Produtos
 const getProdutosFromAzure = async () => {
     try {
-      const response = await fetch("https://easymoto.azurewebservices.net/api/ProdutosAPI")
+      // const response = await fetch("https://easymoto.azurewebservices.net/api/ProdutosAPI")
       const data = await response.json()
       return data;
     } catch (error) {

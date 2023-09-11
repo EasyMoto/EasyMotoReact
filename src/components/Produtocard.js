@@ -7,10 +7,11 @@ const Produtocard = ({produto}) => {
     <div>
       <Card className="home-product-card">
             <div className="image-card">
-              <Card.Img variant="top" src={`https://easymoto.azurewebsites.net/wwwroot/images/${produto.listaFotografias[0]}`}/>
+              {/* <Card.Img variant="top" src={`https://easymoto.azurewebsites.net/wwwroot/images/${produto.listaFotografias[0]}`}/> */}
+              <Card.Img variant="top" src={produto.images}/>
             </div>
             <Card.Body>
-              <Card.Title>{produto.preco} €</Card.Title>
+              <Card.Title>{produto.preco} </Card.Title>
               <Card.Text className="truncate">
                 {produto.nome}
               </Card.Text>
